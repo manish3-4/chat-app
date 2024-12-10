@@ -2,7 +2,7 @@ import { IoSearchSharp } from "react-icons/io5";
 const SearchInput = () => {
   return (
     <div>
-        <form className="flex mt-2">
+        <form className="flex mt-2" name="#">
             <input type="text" name="" id=""
             placeholder="Search..." className=" input input-bordered rounded-full"/>
             <button type="submit" className="btn btn-circle ml-1 bg-sky-500 text-white">

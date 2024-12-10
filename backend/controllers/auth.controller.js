@@ -7,7 +7,7 @@ export const signup = async(req, res) => {
         const {fullname, username, password, confirmpassword, gender} = req.body;
 
         if(password !== confirmpassword){
-            return res.status(400).json({message: "Passwords do not match."})
+            return res.status(400).json({message: "Passwords do not match backend."})
         }
 
         const user = await  User.findOne({username});
@@ -19,9 +19,8 @@ export const signup = async(req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
 
         //https://avatar-placeholder.iran.liara.run/
-
-        const boyProfilePic = `https://avatar-placeholder.iran.liara.run/public/boy?username=${username}`
-        const girlProfilePic = `https://avatar-placeholder.iran.liara.run/public/girl?username=${username}`
+        const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`
+        const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`
 
         const newUser = new User({
             fullname,
