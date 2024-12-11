@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/AuthContext.jsx";
 
 const useSignup = () => {
   const [loading, setloading] = useState(false);
-  const {setAuthUser} = useAuthContext;
+  const {setAuthUser} = useAuthContext();
 
   const signup = async({inputs}) => {
     const {fullname, username, password, confirmpassword, gender} = inputs;
@@ -26,8 +26,7 @@ const useSignup = () => {
         
 
         //localstorage
-        localStorage.setItem("chat-app", JSON.stringify(data))
-        setAuthUser(data);
+        
         if(data.error){
             throw new Error(data.error);
             
@@ -35,6 +34,9 @@ const useSignup = () => {
         // context
         if(data.status === 400){
             toast.error(data.message);
+        }else{
+            localStorage.setItem("chat-app", JSON.stringify(data))
+            setAuthUser(data);
         }
         
         
