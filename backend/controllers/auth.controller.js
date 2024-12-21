@@ -7,12 +7,12 @@ export const signup = async(req, res) => {
         const {fullname, username, password, confirmpassword, gender} = req.body;
 
         if(password !== confirmpassword){
-            return res.status(400).json({message: "Passwords do not match backend."})
+            return res.status(400).json({error: "Passwords do not match backend."})
         }
 
         const user = await  User.findOne({username});
         if(user){
-            return res.status(400).json({message: "Username already exists."});
+            return res.status(400).json({error: "Username already exists."});
         }
         //Hashed password here
         const salt =  await bcrypt.genSalt(10);

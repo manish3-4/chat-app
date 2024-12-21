@@ -9,7 +9,7 @@ const useSendMessage = () => {
   const sendMessage = async (message) => {
     setLoading(true);
     try {
-        const res = await fetch(`/api/messages/send/${selectedConversation._id}`, {
+        const res = await fetch(`/api/messages/send/${selectedConversation?._id}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message })
@@ -30,4 +30,4 @@ const useSendMessage = () => {
 return { sendMessage, loading };
 }
 
-export default useSendMessage
+export default useSendMessage;
