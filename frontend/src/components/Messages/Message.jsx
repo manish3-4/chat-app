@@ -5,7 +5,8 @@ import useConversation from '../../zustand/useConversation';
 const Message = ({message}) => {
   const {authUser} = useAuthContext();
   // console.log(authUser);
-  const { selectedConversation } =useConversation();
+  const {selectedConversation} = useConversation();
+  
   const fromMe = message.senderId === authUser.id;
   const formattedTime = extractTime(message.createdAt);
   const chatClassName = fromMe ? 'chat-end' : 'chat-start';
