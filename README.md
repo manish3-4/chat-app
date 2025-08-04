@@ -60,3 +60,28 @@ A simple and scalable chat application built for real-time communication. This r
     Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
+    chat-app/ 
+    ├── client/ # Frontend React application 
+    ├── server/ # Backend Node.js/Express API 
+    ├── package.json 
+    ├── README.md 
+    └── .env.example
+
+
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests for any improvements or bug fixes.
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/my-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/my-feature`
+5. Open a pull request
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+For questions or collaboration, contact [manish3-4](https://github.com/manish3-4).
